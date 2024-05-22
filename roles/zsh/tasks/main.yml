@@ -1,0 +1,31 @@
+- name: "Install zsh"
+  ansible.builtin.package:
+    name: zsh
+    state: present
+# - name: Install zsh
+#   become: true
+#   apt: name=zsh
+#   tags:
+#   - zsh
+# - name: Change shell
+#   become: true
+#   ansible.builtin.command: chsh -s `which zsh`
+#   tags:
+#   - zsh
+# - name: Install ohmyzsh
+#   become: true
+#   shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#   tags:
+#   - zsh
+# - name: Install the zsh autosuggestions
+#   become: true
+#   ansible.builtin.git:
+#     repo: https://github.com/zsh-users/zsh-autosuggestions.git
+#     dest: "~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/"
+#   tags:
+#   - zsh
+# - name: Enter zshell
+#   become: true
+#   ansible.builtin.command: zsh
+#   tags:
+#   - zsh

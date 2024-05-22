@@ -1,0 +1,11 @@
+- name: "Mise | Downloading and Installing Mise"
+  ansible.builtin.shell: curl https://mise.run | sh
+- name: do facts module to get latest information
+  ansible.builtin.shell: source /home/nonroot/.zshrc
+  args:
+     executable: /bin/zsh
+  ignore_errors: true
+- name: "Add neovim plugin"
+  ansible.builtin.shell: mise plugins install --yes neovim
+- name: "Mise | Install packages described in our .tool_version"
+  ansible.builtin.command: mise install

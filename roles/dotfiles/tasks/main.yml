@@ -1,0 +1,23 @@
+---
+- name: "Dotfiles | Install stow && git"
+  ansible.builtin.package:
+    name:
+      - git
+      - stow
+  become: true
+- name: "Get current dotfiles from Git"
+  ansible.builtin.git:
+    repo: 'https://github.com/keslol/.dotfiles.git'
+    dest: ~/.dotfiles
+    version: master
+  changed_when: true
+- name: Change permission on install.sh file
+  file:
+    path: ~/.dotfiles/install.sh
+    state: file
+    mode: 0755
+- name: "Stow install"
+  ansible.builtin.command:
+    chdir: ~/.dotfiles
+    cmd: ./install.sh
+  changed_when: true

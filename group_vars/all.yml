@@ -1,0 +1,19 @@
+default_roles:
+  - system
+  - zsh
+  - dotfiles
+  - mise
+  # - core_installs
+  # - obsidian
+  # - bitwarden
+  # - alacritty
+  # - docker
+  # - flatpak
+  # - fonts
+  # - fzf
+  # - git
+  # - neovim
+  # - rust
+  # - ssh
+  # - tmux
+
